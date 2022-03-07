@@ -1,0 +1,11 @@
+.keyboard-button {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 8px;
+}

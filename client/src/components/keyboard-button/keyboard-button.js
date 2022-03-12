@@ -5,7 +5,7 @@ const KeyboardButton = (props) => {
         <div 
             className="keyboard-button" 
             onClick={() => {
-                console.log(props.value);
+                props.onClick(props.value);
             }}
         >
             {props.value}

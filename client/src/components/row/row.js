@@ -11,7 +11,7 @@ for(let i = 0; i < props.letters.length; i++){
 }
 }
 for(let i = squares.length; i < 5; i++){
-    squares.push(<Square />)
+    squares.push(<Square/>)
 }
 
     return (

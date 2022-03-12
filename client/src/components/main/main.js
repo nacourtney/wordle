@@ -4,13 +4,22 @@ import Keyboard from "../keyboard/keyboard";
 import "./main.css";
 
 const Main = () => {
+
+    const guesses = [
+        
+    ];
+
+    const handleClick = (value) =>{
+        console.log(value);
+    }
+
     return(        
         <div>
             <Header />
             <div className="gameboard-container" >
-                <GameBoard />
+                <GameBoard guesses={guesses} />
             </div>            
-            <Keyboard />           
+            <Keyboard onClick={handleClick} />           
         </div>
     )
 }

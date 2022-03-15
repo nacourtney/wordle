@@ -9,7 +9,7 @@ const row3 = 7;
 
 const keyBoardTop = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
 const keyBoardMiddle = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
-const keyBoardBottom = ["z", "x", "c", "v", "b", "n", "m"];
+const keyBoardBottom = ["backspace","z", "x", "c", "v", "b", "n", "m", "enter"];
 
 const Keyboard = (props) => {
 

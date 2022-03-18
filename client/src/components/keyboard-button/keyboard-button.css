@@ -9,3 +9,18 @@
   text-transform: uppercase;
   border-radius: 8px;
 }
+
+.wrong {
+  background-color: #525252;
+  color: white;
+}
+
+.right {
+  background-color: #1f782b;
+  color: white;
+}
+
+.incorrect-placement {
+  background-color: #9e972e;
+  color: white;
+}

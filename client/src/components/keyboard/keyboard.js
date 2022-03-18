@@ -18,15 +18,21 @@ const Keyboard = (props) => {
     const keyBoardButtonsBottom = [];
 
     for(let i = 0; i < keyBoardTop.length; i++){
-        keyboardButtonsTop.push(<KeyboardButton onClick={props.onClick} value={keyBoardTop[i]} />);
+      keyboardButtonsTop.push(<KeyboardButton onClick={props.onClick} value={keyBoardTop[i]} result={undefined}/>);
     }
 
     for(let i = 0; i < keyBoardMiddle.length; i++){
-        keyBoardButtonsMiddle.push(<KeyboardButton onClick={props.onClick} value={keyBoardMiddle[i]} />);
+
+        let result = undefined;
+
+        if(keyBoardMiddle[i] === "d"){
+            result = 1;
+        }
+        keyBoardButtonsMiddle.push(<KeyboardButton onClick={props.onClick} value={keyBoardMiddle[i]} result={result} />);
     }
 
     for(let i = 0; i < keyBoardBottom.length; i++){
-        keyBoardButtonsBottom.push(<KeyboardButton onClick={props.onClick} value={keyBoardBottom[i]} />);
+        keyBoardButtonsBottom.push(<KeyboardButton onClick={props.onClick} value={keyBoardBottom[i]} result={undefined} />);
     }
 
     return (

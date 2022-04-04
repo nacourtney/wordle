@@ -16,23 +16,45 @@ const Keyboard = (props) => {
     const keyboardButtonsTop = [];
     const keyBoardButtonsMiddle = [];
     const keyBoardButtonsBottom = [];
+    const results = [["q", 0],["b", 1],["k", 2]];
+    
 
     for(let i = 0; i < keyBoardTop.length; i++){
-      keyboardButtonsTop.push(<KeyboardButton onClick={props.onClick} value={keyBoardTop[i]} result={undefined}/>);
+        let result = undefined;
+        
+        for(let j = 0; j < results.length; j++){
+            if(keyBoardTop[i] === results[j][0]){
+                result = results[j][1]
+            }
+        }
+      keyboardButtonsTop.push(<KeyboardButton onClick={props.onClick} value={keyBoardTop[i]} result={result}/>);
     }
 
+    
     for(let i = 0; i < keyBoardMiddle.length; i++){
 
         let result = undefined;
-
-        if(keyBoardMiddle[i] === "d"){
-            result = 1;
+        
+        for(let j = 0; j < results.length; j++){
+            if(keyBoardMiddle[i] === results[j][0]){
+                result = results[j][1]
+            }
         }
+
         keyBoardButtonsMiddle.push(<KeyboardButton onClick={props.onClick} value={keyBoardMiddle[i]} result={result} />);
     }
 
     for(let i = 0; i < keyBoardBottom.length; i++){
-        keyBoardButtonsBottom.push(<KeyboardButton onClick={props.onClick} value={keyBoardBottom[i]} result={undefined} />);
+
+        let result = undefined;
+        
+        for(let j = 0; j < results.length; j++){
+            if(keyBoardBottom[i] === results[j][0]){
+                result = results[j][1]
+            }
+        }
+
+        keyBoardButtonsBottom.push(<KeyboardButton onClick={props.onClick} value={keyBoardBottom[i]} result={result} />);
     }
 
     return (

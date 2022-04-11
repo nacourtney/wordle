@@ -16,7 +16,7 @@ const Keyboard = (props) => {
     const keyboardButtonsTop = [];
     const keyBoardButtonsMiddle = [];
     const keyBoardButtonsBottom = [];
-    const results = [["q", 0],["b", 1],["k", 2]];
+    const results = [];
     
 
     for(let i = 0; i < keyBoardTop.length; i++){

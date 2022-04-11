@@ -7,7 +7,7 @@ const squares = [];
 
 if(props.letters){
 for(let i = 0; i < props.letters.length; i++){
-    squares.push(<Square letter={props.letters[i]}/>);
+    squares.push(<Square letter={props.letters[i]} result={props.results[i]}/>);
 }
 }
 for(let i = squares.length; i < 5; i++){

@@ -12,7 +12,8 @@ let rowCounter = 0;
 const Main = () => {
 
     const [guesses, setGuesses] = React.useState([]);
-    const [results, setResults] = React.useState([]);    
+    const [results, setResults] = React.useState([[],[],[],[],[]]);
+    const [keyboardResults, setKeyboardResults] = React.useState([]);    
 
     const handleClick = (value) =>{
         if(value === "enter"){
@@ -25,7 +26,7 @@ const Main = () => {
                 const newResults = [...results];
                 newResults[rowCounter] = result;
                 setResults(newResults);
-
+                setKeyboardResults([["a", 1],["b", 2]]);
                 rowCounter++;
                 currentGuess = [];
                 console.log(rowCounter);
@@ -55,7 +56,7 @@ const Main = () => {
             <div className="gameboard-container" >
                 <GameBoard guesses={guesses} result={results} />
             </div>            
-            <Keyboard onClick={handleClick} />           
+            <Keyboard onClick={handleClick} result={keyboardResults} />           
         </div>
     )
 }

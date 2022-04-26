@@ -5,8 +5,11 @@ import "./main.css";
 import React from "react";
 import {check} from "../../GuessChecker";
 
+
 let currentGuess = [];
 let rowCounter = 0;
+
+const runningGuessesAndResults = {}
 
 
 const Main = () => {
@@ -26,7 +29,34 @@ const Main = () => {
                 const newResults = [...results];
                 newResults[rowCounter] = result;
                 setResults(newResults);
-                setKeyboardResults([["a", 1],["b", 2]]);
+
+                for(let i = 0; i < currentGuess.length; i++){
+                    if(runningGuessesAndResults[i] !== undefined){
+                       if(runningGuessesAndResults[i] === 0 && result[i] !== 0 ){
+                           runningGuessesAndResults[i] = result[i];
+                       } else if (runningGuessesAndResults[i] === 2 && result[i] !== 2 || result[i] !== 0){
+                           runningGuessesAndResults[i] = result[i];
+                       } else {
+                           runningGuessesAndResults[i] = 1;
+                       }
+                    } else {
+                        runningGuessesAndResults[currentGuess[i]] = result[i];
+                    }
+                }
+
+                const tempKeyboardResult = [];
+
+                for(const [key, value] of Object.entries(runningGuessesAndResults)){
+                    tempKeyboardResult.push([key, value]);
+                }
+
+                
+
+
+
+
+
+                setKeyboardResults(tempKeyboardResult);
                 rowCounter++;
                 currentGuess = [];
                 console.log(rowCounter);
@@ -56,7 +86,7 @@ const Main = () => {
             <div className="gameboard-container" >
                 <GameBoard guesses={guesses} result={results} />
             </div>            
-            <Keyboard onClick={handleClick} result={keyboardResults} />           
+            <Keyboard onClick={handleClick} results={keyboardResults} />           
         </div>
     )
 }
